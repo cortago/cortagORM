@@ -7,13 +7,13 @@ import (
 // AutoField is an IntegerField that automatically increments according to available IDs
 type AutoField uint32
 
-// BigAutoField is much like AutoField but for 64 bit integer  
+// BigAutoField is much like AutoField but for 64 bit integer
 type BigAutoField uint64
 
 // BigIntegerField is a 64 bit integer
 type BigIntegerField int64
 
-// BooleanField is a true/false field 
+// BooleanField is a true/false field
 type BooleanField bool
 
 // CharField is a string field
@@ -25,7 +25,7 @@ type TimeField time.Time
 // DecimalField is a decimal number
 type DecimalField float64
 
-// DurationField is time.Duration instance of golang time package 
+// DurationField is time.Duration instance of golang time package
 type DurationField time.Duration
 
 // EmailField is a CharField with email validations(TODO: Add Email Validations)
@@ -44,4 +44,4 @@ type PositiveSmallIntegerField uint8
 type SmallIntegerField int8
 
 // TextField is for long text
-type TextField string 
+type TextField string
