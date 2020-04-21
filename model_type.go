@@ -4,6 +4,12 @@ import (
 	"time"
 )
 
+// ORMType is a generic interface for all ORM Types
+type ORMType interface {
+	// ormType ensures that no other type accidentally implements the interface
+	ormType()
+}
+
 // AutoField is an IntegerField that automatically increments according to available IDs
 type AutoField uint32
 
@@ -45,3 +51,17 @@ type SmallIntegerField int8
 
 // TextField is for long text
 type TextField string
+
+func (*AutoField) ormType()                 {}
+func (*BigAutoField) ormType()              {}
+func (*BigIntegerField) ormType()           {}
+func (*BooleanField) ormType()              {}
+func (*CharField) ormType()                 {}
+func (*DecimalField) ormType()              {}
+func (*DurationField) ormType()             {}
+func (*EmailField) ormType()                {}
+func (*IntegerField) ormType()              {}
+func (*PositiveIntegerField) ormType()      {}
+func (*PositiveSmallIntegerField) ormType() {}
+func (*SmallIntegerField) ormType()         {}
+func (*TextField) ormType()                 {}
