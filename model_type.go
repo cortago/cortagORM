@@ -1,11 +1,12 @@
 package model
 
-import (
-	"time"
-)
+import "time"
 
 // ORMType is a generic interface for all ORM Types
 type ORMType interface {
+	// FieldDataType returns data type for any corresponding database.
+	FieldDataType(database string) string
+
 	// ormType ensures that no other type accidentally implements the interface
 	ormType()
 }
@@ -22,11 +23,11 @@ type BigIntegerField int64
 // BooleanField is a true/false field
 type BooleanField bool
 
-// CharField is a string field
+// CharField is a string field. Default limit is 255 characters
 type CharField string
 
 // TimeField is time.Time instance of golang time package
-type TimeField time.Time
+type TimeDateField time.Time
 
 // DecimalField is a decimal number
 type DecimalField float64

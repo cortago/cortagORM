@@ -22,7 +22,7 @@ type Field struct {
 	// Type of the ORM
 	OrmType ORMType
 	// Properties consist of meta information for fields 
-	Properties map[string]interface{}
+	Properties map[string]string
 }
 
 // CreateModel is an opertion to create table with certain fields provided  
